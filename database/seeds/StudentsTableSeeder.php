@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Student;
+use App\Course;
 use Faker\Generator as Faker;
 
 class StudentsTableSeeder extends Seeder
@@ -13,12 +14,13 @@ class StudentsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 40; $i++)
+        for ($i=0; $i < 80; $i++)
         {
           $gender = rand(0,1);
 
           if ($gender==0) {
             $newStudentArray = [
+              'course_id' => Course::inRandomOrder()->first()->id,
               'firstname' => $faker->firstNameMale,
               'lastname' => $faker->lastname,
               'age' => rand(15,35),
@@ -28,6 +30,7 @@ class StudentsTableSeeder extends Seeder
           }
           else {
             $newStudentArray = [
+              'course_id' => Course::inRandomOrder()->first()->id,
               'firstname' => $faker->firstnameFemale,
               'lastname' => $faker->lastname,
               'age' => rand(15,35),
