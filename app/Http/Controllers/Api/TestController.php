@@ -16,5 +16,14 @@ class TestController extends Controller
         'students' => $students]
       );
     }
-    
+
+    public function show($id)
+    {
+        $student = Student::with('course')->find($id); //sing per la relazione
+
+        return response()->json([
+          'student' => $student
+        ]);
+    }
+
 }

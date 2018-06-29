@@ -16,4 +16,13 @@ class TeachersController extends Controller
       'teachers' => $teachers
     ]);
   }
+
+  public function show($id)
+  {
+    $teacher = Teacher::with('courses')->find($id); //where('id',$id)->first();
+
+    return response()->json([
+      'teacher'=>$teacher
+    ]);
+  }
 }
