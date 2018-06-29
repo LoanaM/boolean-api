@@ -13,4 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/test','Api\TestController@index');
+Route::get('/students','Api\TestController@index');

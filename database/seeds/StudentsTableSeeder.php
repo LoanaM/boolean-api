@@ -18,25 +18,27 @@ class StudentsTableSeeder extends Seeder
           $gender = rand(0,1);
 
           if ($gender==0) {
-            $newStudent = [
+            $newStudentArray = [
               'firstname' => $faker->firstNameMale,
               'lastname' => $faker->lastname,
-              'age' => 'sfdffd',
-              'address' => 'sfdffd',
-              'gender' => 'sfdffd',
+              'age' => rand(15,35),
+              'address' => $faker->address,
+              'gender' => 'maschio',
             ];
           }
           else {
-            $newStudent = [
+            $newStudentArray = [
               'firstname' => $faker->firstnameFemale,
               'lastname' => $faker->lastname,
-              'age' => 'sfdffd',
-              'address' => 'sfdffd',
-              'gender' => 'sfdffd',
+              'age' => rand(15,35),
+              'address' => $faker->address,
+              'gender' => 'femmina',
             ];
           }
 
-          dd($newStudent);
+          $newStudent = new Student;
+          $newStudent->fill($newStudentArray);
+          $newStudent->save();
         }
 
     }
