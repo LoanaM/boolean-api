@@ -23,7 +23,7 @@ class StudentsTableSeeder extends Seeder
               'lastname' => $faker->lastname,
               'age' => rand(15,35),
               'address' => $faker->address,
-              'gender' => 'maschio',
+              'gender' => 'male',
             ];
           }
           else {
@@ -32,7 +32,7 @@ class StudentsTableSeeder extends Seeder
               'lastname' => $faker->lastname,
               'age' => rand(15,35),
               'address' => $faker->address,
-              'gender' => 'femmina',
+              'gender' => 'female',
             ];
           }
 

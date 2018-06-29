@@ -14,13 +14,13 @@ class TeachersTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         $randomGend = ['male','female'];
-        for ($i=0; $i < 30; $i++) {
+        for ($i=0; $i < 7; $i++) {
           $gender = $randomGend[array_rand($randomGend)];
 
           $newTeach = [
             'firstname' => $faker->firstName($gender),
             'lastname' => $faker->lastname,
-            'age' => rand(15,35),
+            'age' => rand(25,55),
             'address' => $faker->address,
             'gender' => $gender,
           ];
