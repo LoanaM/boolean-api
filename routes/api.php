@@ -13,8 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/students','Api\TestController@index');
-Route::get('/teachers','Api\TeachersController@index');
+Route::get('/studenti','Api\TestController@index');
+Route::get('/insegnanti','Api\TeachersController@index');
+Route::get('/corsi','Api\CoursesController@index'); 
 
 
 
