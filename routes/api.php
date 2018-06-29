@@ -15,7 +15,8 @@ use Illuminate\Http\Request;
 
 Route::get('/studenti','Api\TestController@index');
 Route::get('/insegnanti','Api\TeachersController@index');
-Route::get('/corsi','Api\CoursesController@index'); 
+Route::get('/corsi','Api\CoursesController@index');
+Route::get('/corsi/{id}','Api\CoursesController@show'); 
 
 
 

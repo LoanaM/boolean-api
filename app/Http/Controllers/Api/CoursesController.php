@@ -13,7 +13,14 @@ class CoursesController extends Controller
     $courses = Course::all();
 
     return response()->json([
-      'courses' => $courses]
-    );
+      'courses' => $courses
+    ]);
+  }
+
+  public function show(Course $id)
+  {
+    return response()->json([
+      'corso' => $id
+    ]);
   }
 }
