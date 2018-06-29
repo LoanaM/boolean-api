@@ -13,7 +13,7 @@ class StudentsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 30; $i++)
+        for ($i=0; $i < 40; $i++)
         {
           $gender = rand(0,1);
 

@@ -14,14 +14,14 @@ class CoursesTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-      for ($i=0; $i < 10; $i++) {
+      for ($i=0; $i < 8; $i++) {
 
         $newCourseArray = [
           'teacher_id' => Teacher::inRandomOrder()->first()->id,
           'coursename' => $faker->jobTitle,
           'start_date' => $faker->dateTime,
           'end_date' => $faker->dateTime,
-        ];+
+        ];
 
         $newCourse = new Course;
         $newCourse->fill($newCourseArray);
