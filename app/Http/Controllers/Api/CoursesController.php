@@ -30,7 +30,7 @@ class CoursesController extends Controller
       $arrayWith[] = 'students';
     }
 
-    $course = Course::with($arrayWith)->first();
+    $course = Course::with($arrayWith)->where('id', $id)->first();
 
     return response()->json([
       'course' => $course
