@@ -17,10 +17,24 @@ class CoursesController extends Controller
     ]);
   }
 
-  public function show(Course $id)
+  public function show(Request $request, $id)
   {
+
+    $data = $request->all();
+    $arrayWith = [];
+
+    if (isset($data['insegnante']) && $data['insegnante']) {
+      $arrayWith[] = 'teacher';  //nomi delle relazioni many or one nel model course
+    }
+    if (isset($data['studenti']) && $data['studenti']){
+      $arrayWith[] = 'students';
+    }
+
+    $course = Course::with($arrayWith)->first();
+
     return response()->json([
-      'corso' => $id
+      'course' => $course
     ]);
+
   }
 }
