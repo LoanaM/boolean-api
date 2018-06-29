@@ -13,29 +13,31 @@ class StudentsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        for ($i=0; $i < 30; $i++)
+        {
+          $gender = rand(0,1);
 
-        $students = [
-          [
-            'firstname' => 'sfdffd',
-            'lastname' => 'ssff',
-            'age' => 'sfdffd',
-            'address' => 'sfdffd',
-            'gender' => 'sfdffd'
-          ],
-          [
-            'firstname' => 'bbbbbbb',
-            'lastname' => 'bbbbbbb',
-            'age' => '14',
-            'address' => 'bbbbbbb',
-            'gender' => 'bbbbbbb'
-          ]
-        ];
+          if ($gender==0) {
+            $newStudent = [
+              'firstname' => $faker->firstNameMale,
+              'lastname' => $faker->lastname,
+              'age' => 'sfdffd',
+              'address' => 'sfdffd',
+              'gender' => 'sfdffd',
+            ];
+          }
+          else {
+            $newStudent = [
+              'firstname' => $faker->firstnameFemale,
+              'lastname' => $faker->lastname,
+              'age' => 'sfdffd',
+              'address' => 'sfdffd',
+              'gender' => 'sfdffd',
+            ];
+          }
 
-        foreach ($students as $student) {
-          $newStudent = new Student();
-          $newStudent->fill($student);
-
-          $newStudent->save();
+          dd($newStudent);
         }
+
     }
 }
