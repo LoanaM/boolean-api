@@ -12,7 +12,9 @@ class TestController extends Controller
     {
       $students = Student::all();
 
-      return response()->json($students);
-      
+      return response()->json([
+        'students' => $students]
+      );
     }
+    
 }

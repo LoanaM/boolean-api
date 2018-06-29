@@ -14,3 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/students','Api\TestController@index');
+Route::get('/teachers','Api\TeachersController@index');
+
+
+
+// 127.0.0.1 ->env error = sostituire con localhost
