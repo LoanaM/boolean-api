@@ -26,4 +26,33 @@ class TestController extends Controller
         ]);
     }
 
+    public function save(Request $request)
+    {
+      //request->validate()
+
+      $data = $request->all();
+
+      $newStudent = new Student;
+      $newStudent->fill($data);
+      $newStudent->save();
+      if(!empty($newStudent->id)){
+        return response()->json([
+          'success'=>true
+        ]);
+      }
+      else {
+        return response()->json([
+          'success'=>false
+        ]);
+      }
+    }
+
+    public function update(Request $request)
+    {
+      $student = Student::find($id);
+      if(empty($student)) return response()->json(['error'=>true]);
+      $student->update($request->all());
+      return response()->json(['success'=>true]);
+    }
+
 }

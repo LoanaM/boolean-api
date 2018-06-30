@@ -15,9 +15,14 @@ use Illuminate\Http\Request;
 
 Route::get('/studenti','Api\TestController@index');
 Route::get('/studenti/{id}','Api\TestController@show');
+Route::post('/nuovo-studente','Api\TestController@save');
+Route::put('/studenti/{id}','Api\TestController@update');
+
 
 Route::get('/insegnanti','Api\TeachersController@index');
 Route::get('/insegnanti/{id}','Api\TeachersController@show');
+Route::post('/nuovo-insegnante','Api\TeachersController@save');
+
 
 Route::get('/corsi','Api\CoursesController@index');
 Route::get('/corsi/{id}','Api\CoursesController@show');
